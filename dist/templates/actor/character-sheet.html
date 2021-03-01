@@ -1,0 +1,164 @@
+<form class="{{cssClass}} character flexcol" autocomplete="off">
+
+  <header class="sheet-header">
+    <div class="input-group name">
+      <label for="actor.name">Character</label>
+      <input class="name" type="text" name="actor.name" value="{{actor.name}}" data-dtype="String" />
+    </div>
+
+    <div class="input-group experience">
+      <div class="label">Experience</div>
+
+      <div class="pip-container">
+        <!-- Start idx at 1 since the first pip represents 1 XP, not 0 XP -->
+        {{#each experience as |exp|}}
+        <div class="pip" data-idx="{{add @index 1}}">
+          <div class="image {{#if exp.earned}}earned-active{{/if}} {{#if exp.used}}used-active{{/if}}">
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </header>
+
+  <section class="main">
+    <div class="lhs">
+      <div class="track-header">
+        Mntm
+      </div>
+
+      <div class="track momentum-track">
+        {{#each momentumTrack as |momentum|}}
+        <div class="block {{#if (gte @index ../momentumIdx)}}active{{/if}}" data-idx="{{@index}}">
+          {{withSign momentum}}
+        </div>
+        {{/each}}
+      </div>
+
+      <div class="momentum-max">
+        <label for="momentum-max">Max</label>
+
+        <input class="momentum-max" type="number" name="data.tracks.momentum.max"
+          value="{{actor.data.tracks.momentum.max}}" min="0" max="10" data-dtype="Number" />
+      </div>
+
+      <div class="momentum-reset">
+        <label for="momentum-reset">Reset</label>
+
+        <input class="momentum-reset" type="number" name="data.tracks.momentum.reset"
+          value="{{data.tracks.momentum.reset}}" min="0" max="10" data-dtype="Number" />
+      </div>
+    </div>
+
+    <div class="center">
+      <section class="stats">
+        <div class="stat edge">
+          <input id="edge" class="edge" type="number" name="data.stats.edge.value" value="{{data.stats.edge.value}}"
+            min="0" max="5" data-dtype="Number" />
+
+          <div class="label" data-stat="edge">Edge</div>
+        </div>
+
+        <div class="stat heart">
+          <input id="heart" class="heart" type="number" name="data.stats.heart.value" value="{{data.stats.heart.value}}"
+            min="0" max="5" data-dtype="Number" />
+
+          <div class="label" data-stat="heart">Heart</div>
+        </div>
+
+        <div class="stat iron">
+          <input id="iron" class="iron" type="number" name="data.stats.iron.value" value="{{data.stats.iron.value}}"
+            min="0" max="5" data-dtype="Number" />
+
+          <div class="label" data-stat="iron">Iron</div>
+        </div>
+
+        <div class="stat shadow">
+          <input id="shadow" class="shadow" type="number" name="data.stats.shadow.value"
+            value="{{data.stats.shadow.value}}" min="0" max="5" data-dtype="Number" />
+
+          <div class="label" data-stat="shadow">Shadow</div>
+        </div>
+
+        <div class="stat wits">
+          <input id="wits" class="wits" type="number" name="data.stats.wits.value" value="{{data.stats.wits.value}}"
+            min="0" max="5" data-dtype="Number" />
+
+          <div class="label" data-stat="wits">Wits</div>
+        </div>
+      </section>
+
+      <nav class="sheet-tabs" data-group="primary">
+        <ul>
+          <li>
+            <a class="item" title="{{localize 'ironsworn.tooltip.core'}}"
+              data-tab="core">{{localize 'ironsworn.tab.core'}}</a>
+          </li>
+          <li>
+            <a class="item" title="{{localize 'ironsworn.tooltip.inventory'}}"
+              data-tab="inventory">{{localize 'ironsworn.tab.inventory'}}</a>
+          </li>
+          <li>
+            <a class="item" title="{{localize 'ironsworn.tooltip.biography'}}"
+              data-tab="bio">{{localize 'ironsworn.tab.biography'}}</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="tab-body">
+        <div class="tab core" data-group="primary" data-tab="core">
+          {{> "systems/ironsworn/templates/actor/partial/core-tab.html"}}
+        </div>
+
+        <div class="tab inventory" data-group="primary" data-tab="inventory">
+          {{> "systems/ironsworn/templates/actor/partial/inventory-tab.html"}}
+        </div>
+
+        <div class="tab bio" data-group="primary" data-tab="bio">
+          {{> "systems/ironsworn/templates/actor/partial/bio-tab.html"}}
+        </div>
+      </div>
+    </div>
+
+    <div class="rhs">
+      <div class="track-header">
+        Health
+      </div>
+
+      <div class="track health-track">
+        {{#each healthTrack as |health|}}
+        <div class="block {{#if (gte @index ../healthIdx)}}active{{/if}}" data-idx="{{@index}}">
+          {{withSign health}}
+        </div>
+        {{/each}}
+      </div>
+
+      <div class="track-header">
+        Spirit
+      </div>
+
+      <div class="track spirit-track">
+        {{#each spiritTrack as |spirit|}}
+        <div class="block {{#if (gte @index ../spiritIdx)}}active{{/if}}" data-idx="{{@index}}">
+          {{withSign spirit}}
+        </div>
+        {{/each}}
+      </div>
+
+      <div class="track-header">
+        Supply
+      </div>
+
+      <div class="track supply-track">
+        {{#each supplyTrack as |supply|}}
+        <div class="block {{#if (gte @index ../supplyIdx)}}active{{/if}}" data-idx="{{@index}}">
+          {{withSign supply}}
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+</form>
+
+{{{hoverCard}}}

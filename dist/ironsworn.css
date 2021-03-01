@@ -1,0 +1,883 @@
+/* ------------------------------------ */
+/*				   Sass					*/
+/* This is your Sass entry file			*/
+/* ------------------------------------ */
+@font-face {
+  font-family: OPTILagoon;
+  src: url("fonts/OPTILagoon-Bold.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: OPTILagoon;
+  src: url("fonts/OPTILagoon-ExtraBold.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+.ironsworn.sheet .input-group label,
+.ironsworn.sheet .input-group .label {
+  font-weight: bold;
+  line-height: 24px;
+}
+.ironsworn.sheet .progress {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.ironsworn.sheet .progress .pip {
+  margin: 0 4px;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #505050;
+}
+.ironsworn.sheet .progress .pip.hover {
+  background: #b9b9b9;
+}
+.ironsworn.sheet .progress .pip img {
+  border: none;
+}
+.ironsworn textarea {
+  font-family: Signika, sans-serif;
+}
+.ironsworn .editor {
+  font-family: Signika, sans-serif;
+}
+.ironsworn .editor .EasyMDEContainer .preview,
+.ironsworn .editor .EasyMDEContainer .side-by-side,
+.ironsworn .editor .EasyMDEContainer .fullscreen,
+.ironsworn .editor .EasyMDEContainer .guide,
+.ironsworn .editor .EasyMDEContainer .separator:nth-of-type(4),
+.ironsworn .editor .EasyMDEContainer .separator:nth-of-type(5) {
+  display: none;
+}
+.ironsworn.sheet.actor.character {
+  min-width: 750px;
+}
+.ironsworn.sheet.actor.npc {
+  min-width: 625px;
+  min-height: 525px;
+}
+.ironsworn.sheet.actor form {
+  font-family: OPTILagoon, Arial-bold, arial, sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+.ironsworn.sheet.actor form * {
+  text-transform: uppercase;
+}
+.ironsworn.sheet.actor form.character .sheet-header {
+  flex: 0;
+}
+.ironsworn.sheet.actor form.character .sheet-header .input-group {
+  display: flex;
+  flex-direction: column;
+}
+.ironsworn.sheet.actor form.character .sheet-header .input-group label,
+.ironsworn.sheet.actor form.character .sheet-header .input-group .label {
+  flex: 1;
+  font-size: 14px;
+  font-weight: bold;
+}
+.ironsworn.sheet.actor form.character .sheet-header .input-group.name {
+  flex-basis: 33%;
+  margin: 0 8px;
+}
+.ironsworn.sheet.actor form.character .sheet-header .input-group.name input {
+  font-size: 18px;
+  height: 32px;
+  padding: 2px 6px;
+}
+.ironsworn.sheet.actor form.character .sheet-header .input-group.experience {
+  display: flex;
+  flex-direction: column;
+}
+.ironsworn.sheet.actor form.character .sheet-header .input-group.experience .pip-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 2px;
+}
+.ironsworn.sheet.actor form.character .sheet-header .input-group.experience .pip-container .pip {
+  flex-basis: 6.66%;
+  padding: 2px;
+}
+.ironsworn.sheet.actor form.character .sheet-header .input-group.experience .pip-container .pip .image {
+  width: 9px;
+  max-width: 9px;
+  height: 9px;
+  max-height: 9px;
+  border: 1px solid #505050;
+  border-radius: 9px;
+}
+.ironsworn.sheet.actor form.character .sheet-header .input-group.experience .pip-container .pip .image.earned-active {
+  background: green;
+}
+.ironsworn.sheet.actor form.character .sheet-header .input-group.experience .pip-container .pip .image.earned-hover-active {
+  background: green !important;
+}
+.ironsworn.sheet.actor form.character .sheet-header .input-group.experience .pip-container .pip .image.earned-hover-inactive {
+  background: inherit !important;
+}
+.ironsworn.sheet.actor form.character .sheet-header .input-group.experience .pip-container .pip .image.used-active {
+  background: #505050;
+}
+.ironsworn.sheet.actor form.character .sheet-header .input-group.experience .pip-container .pip .image.used-hover-active {
+  background: #505050 !important;
+}
+.ironsworn.sheet.actor form.character .sheet-header .input-group.experience .pip-container .pip .image.used-hover-inactive {
+  background: inherit !important;
+}
+.ironsworn.sheet.actor form.npc .sheet-header {
+  flex: 0;
+}
+.ironsworn.sheet.actor form.npc .sheet-header .name {
+  font-size: 1.2rem;
+  height: 2.2rem;
+}
+.ironsworn.sheet.actor form.npc .main {
+  flex-direction: column;
+  padding: 4px;
+  padding-top: 0;
+}
+.ironsworn.sheet.actor form.npc .main .ranks {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-family: OPTILagoon, Arial-bold, arial, sans-serif;
+  text-transform: uppercase;
+  font-size: 10px;
+}
+.ironsworn.sheet.actor form.npc .main .ranks .rank-wrapper {
+  display: flex;
+  align-items: center;
+}
+.ironsworn.sheet.actor form.npc .main .ranks .rank-wrapper input {
+  width: auto;
+  margin-bottom: 2px;
+}
+.ironsworn.sheet.actor form.npc .main > div:not(:first-child) {
+  margin-top: 1rem;
+}
+.ironsworn.sheet.actor form.npc .main textarea {
+  resize: none;
+  height: 6em;
+}
+.ironsworn.sheet.actor form .main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  flex: 1;
+  margin-top: 16px;
+}
+.ironsworn.sheet.actor form .main input {
+  width: 100%;
+  background: none;
+  border: none;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 4px;
+}
+.ironsworn.sheet.actor form .main input[type=number] {
+  -moz-appearance: textfield;
+}
+.ironsworn.sheet.actor form .main input::-webkit-outer-spin-button, .ironsworn.sheet.actor form .main input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.ironsworn.sheet.actor form .main label,
+.ironsworn.sheet.actor form .main .label {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.ironsworn.sheet.actor form .main .track {
+  display: flex;
+  flex-direction: column;
+}
+.ironsworn.sheet.actor form .main .track .block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 42px;
+  padding: 4px 0;
+  border: 2px solid #505050;
+  font-size: 1.2em;
+}
+.ironsworn.sheet.actor form .main .track .block:not(:first-child) {
+  border-top: none;
+}
+.ironsworn.sheet.actor form .main .track-header {
+  background: #505050;
+  color: white;
+  padding: 4px;
+  font-size: 12px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.ironsworn.sheet.actor form .main .lined-header {
+  display: flex;
+  margin: 8px 0;
+}
+.ironsworn.sheet.actor form .main .lined-header .line {
+  flex: 1;
+  margin: 10px 4px;
+  border-top: 1px solid black;
+}
+.ironsworn.sheet.actor form .main .lined-header .text {
+  flex-shrink: 1;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.ironsworn.sheet.actor form .main .stat {
+  border: 1px solid black;
+  box-shadow: 2px 2px black;
+}
+.ironsworn.sheet.actor form .main .lhs {
+  flex-basis: 10%;
+}
+.ironsworn.sheet.actor form .main .lhs .momentum-track .block.active {
+  background: #48ec48;
+}
+.ironsworn.sheet.actor form .main .lhs .momentum-track .block.hover-active {
+  background: #48ec48 !important;
+}
+.ironsworn.sheet.actor form .main .lhs .momentum-track .block.hover-inactive {
+  background: inherit !important;
+}
+.ironsworn.sheet.actor form .main .lhs .momentum-max,
+.ironsworn.sheet.actor form .main .lhs .momentum-reset {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background: #cacaca;
+  border: 2px solid #505050;
+  border-top: none;
+}
+.ironsworn.sheet.actor form .main .lhs .momentum-max label,
+.ironsworn.sheet.actor form .main .lhs .momentum-reset label {
+  margin: 4px 0;
+}
+.ironsworn.sheet.actor form .main .lhs .momentum-max input,
+.ironsworn.sheet.actor form .main .lhs .momentum-reset input {
+  margin-top: 4px;
+  margin-bottom: 0;
+  border: none;
+  font-size: 1.6em;
+}
+.ironsworn.sheet.actor form .main .lhs .momentum-reset {
+  margin-bottom: 4px;
+}
+.ironsworn.sheet.actor form .main .center {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  flex-basis: 80%;
+  margin: 0 12px;
+}
+.ironsworn.sheet.actor form .main .center section:not(:first-child) {
+  margin-top: 18px;
+}
+.ironsworn.sheet.actor form .main .center .stats {
+  display: flex;
+  flex-direction: row;
+}
+.ironsworn.sheet.actor form .main .center .stats .stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-basis: 20%;
+  margin: 2px;
+}
+.ironsworn.sheet.actor form .main .center .stats .stat .label:hover {
+  cursor: pointer;
+  color: #666666;
+}
+.ironsworn.sheet.actor form .main .center .sheet-tabs {
+  /* Override Default Styles */
+  height: auto;
+  flex: none;
+  margin: 0;
+  line-height: normal;
+  border: none;
+  /* Override Default Styles */
+}
+.ironsworn.sheet.actor form .main .center .sheet-tabs ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  padding: 0;
+  margin-top: 1em;
+  padding: 4px 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+}
+.ironsworn.sheet.actor form .main .center .sheet-tabs ul .active {
+  text-decoration: underline;
+}
+.ironsworn.sheet.actor form .main .center .tab-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.ironsworn.sheet.actor form .main .center .tab-body .tab.active {
+  flex: 1;
+}
+.ironsworn.sheet.actor form .main .center .tab-body .tab.active.inventory {
+  display: flex;
+  flex-direction: column;
+}
+.ironsworn.sheet.actor form .main .center .tab-body .tab.active.inventory .equipment-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+}
+.ironsworn.sheet.actor form .main .center .tab-body .tab.active.inventory .equipment-list .gear {
+  flex-basis: 33%;
+  word-spacing: 2px;
+  font-family: Signika, sans-serif;
+  font-size: 1rem;
+}
+.ironsworn.sheet.actor form .main .center .tab-body .tab.active.inventory .equipment-list .gear * {
+  text-transform: none;
+}
+.ironsworn.sheet.actor form .main .center .tab-body .tab.active.inventory .equipment-list .gear:not(:nth-of-type(1)):not(:nth-of-type(2)):not(:nth-of-type(3)) {
+  margin-top: 12px;
+}
+.ironsworn.sheet.actor form .main .center .tab-body .tab.active.bio {
+  display: flex;
+  flex-direction: column;
+}
+.ironsworn.sheet.actor form .main .center .tab-body .tab.active.bio section.bio {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.ironsworn.sheet.actor form .main .center .tab-body .tab.active.bio section.bio .editor {
+  flex: 1;
+}
+.ironsworn.sheet.actor form .main .center .tab-body .tab.active.bio section.bio .editor * {
+  text-transform: none;
+}
+.ironsworn.sheet.actor form .main .center .tab-body .tab.active.bio section.bio .editor .preview,
+.ironsworn.sheet.actor form .main .center .tab-body .tab.active.bio section.bio .editor .side-by-side,
+.ironsworn.sheet.actor form .main .center .tab-body .tab.active.bio section.bio .editor .fullscreen,
+.ironsworn.sheet.actor form .main .center .tab-body .tab.active.bio section.bio .editor .guide,
+.ironsworn.sheet.actor form .main .center .tab-body .tab.active.bio section.bio .editor .separator:nth-of-type(4),
+.ironsworn.sheet.actor form .main .center .tab-body .tab.active.bio section.bio .editor .separator:nth-of-type(5) {
+  display: none;
+}
+.ironsworn.sheet.actor form .main .center .vows .lined-header .text:hover {
+  cursor: pointer;
+  color: #666666;
+}
+.ironsworn.sheet.actor form .main .center .vows .vow-list {
+  list-style: none;
+  padding-left: 4px;
+  margin-bottom: 0;
+}
+.ironsworn.sheet.actor form .main .center .vows .vow-list .vow-item {
+  font-family: Signika, sans-serif;
+  font-size: 1rem;
+}
+.ironsworn.sheet.actor form .main .center .vows .vow-list .vow-item * {
+  text-transform: none;
+}
+.ironsworn.sheet.actor form .main .center .vows .vow-list .vow-item:not(:last-child) {
+  margin-bottom: 4px;
+}
+.ironsworn.sheet.actor form .main .center .vows .vow-list .vow-item > span:hover {
+  cursor: pointer;
+  color: #666666;
+}
+.ironsworn.sheet.actor form .main .center .assets .lined-header .text:hover {
+  cursor: pointer;
+  color: #666666;
+}
+.ironsworn.sheet.actor form .main .center .assets .asset-list {
+  list-style: none;
+  padding-left: 4px;
+  margin-bottom: 0;
+}
+.ironsworn.sheet.actor form .main .center .assets .asset-list .asset-item {
+  font-family: Signika, sans-serif;
+  font-size: 1rem;
+}
+.ironsworn.sheet.actor form .main .center .assets .asset-list .asset-item * {
+  text-transform: none;
+}
+.ironsworn.sheet.actor form .main .center .assets .asset-list .asset-item:not(:last-child) {
+  margin-bottom: 4px;
+}
+.ironsworn.sheet.actor form .main .center .assets .asset-list .asset-item > span:hover {
+  cursor: pointer;
+  color: #666666;
+}
+.ironsworn.sheet.actor form .main .center .bonds .progress .pip.occupied {
+  background: #9c9c9c;
+}
+.ironsworn.sheet.actor form .main .center .bonds .progress .pip.occupied:hover {
+  cursor: pointer;
+}
+.ironsworn.sheet.actor form .main .center .debilities .content {
+  display: flex;
+}
+.ironsworn.sheet.actor form .main .center .debilities .content strong {
+  display: block;
+  font-size: 1.1em;
+  margin-bottom: 4px;
+}
+.ironsworn.sheet.actor form .main .center .debilities .content .wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+.ironsworn.sheet.actor form .main .center .debilities .content .wrapper .item {
+  flex-basis: 50%;
+  display: flex;
+  align-items: center;
+  font-family: Signika, sans-serif;
+  font-size: 1rem;
+}
+.ironsworn.sheet.actor form .main .center .debilities .content .wrapper .item * {
+  text-transform: none;
+}
+.ironsworn.sheet.actor form .main .center .debilities .content .wrapper .item label {
+  font-weight: normal;
+}
+.ironsworn.sheet.actor form .main .center .debilities .content .wrapper:not(:last-child) {
+  margin-bottom: 10px;
+}
+.ironsworn.sheet.actor form .main .center .debilities .content .left {
+  flex-basis: 50%;
+  padding-right: 16px;
+}
+.ironsworn.sheet.actor form .main .center .debilities .content .right {
+  flex-basis: 50%;
+  padding-left: 16px;
+}
+.ironsworn.sheet.actor form .main .center .inventory .lined-header .text:hover {
+  cursor: pointer;
+  color: #666666;
+}
+.ironsworn.sheet.actor form .main .rhs {
+  flex-basis: 10%;
+}
+.ironsworn.sheet.actor form .main .rhs .track:not(:last-child) {
+  margin-bottom: 9px;
+}
+.ironsworn.sheet.actor form .main .rhs .health-track .block.active {
+  background: #ec5151;
+}
+.ironsworn.sheet.actor form .main .rhs .health-track .block.hover-active {
+  background: #ec5151 !important;
+}
+.ironsworn.sheet.actor form .main .rhs .health-track .block.hover-inactive {
+  background: inherit !important;
+}
+.ironsworn.sheet.actor form .main .rhs .spirit-track .block.active {
+  background: #1cdad1;
+}
+.ironsworn.sheet.actor form .main .rhs .spirit-track .block.hover-active {
+  background: #1cdad1 !important;
+}
+.ironsworn.sheet.actor form .main .rhs .spirit-track .block.hover-inactive {
+  background: inherit !important;
+}
+.ironsworn.sheet.actor form .main .rhs .supply-track .block.active {
+  background: #dad71c;
+}
+.ironsworn.sheet.actor form .main .rhs .supply-track .block.hover-active {
+  background: #dad71c !important;
+}
+.ironsworn.sheet.actor form .main .rhs .supply-track .block.hover-inactive {
+  background: inherit !important;
+}
+.ironsworn.sheet.actor .hover-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 100px;
+  background: url("assets/ui/parchment.jpg");
+  padding: 6px;
+  border: 1px solid #111111;
+  border-radius: 2px;
+}
+.ironsworn.sheet.actor .hover-card .name {
+  flex: 0;
+  font-family: OPTILagoon, Arial-bold, arial, sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.ironsworn.sheet.actor .hover-card .desc {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ironsworn.sheet.actor .hover-card p {
+  margin: 0;
+}
+.ironsworn.sheet.actor .hover-card ul {
+  list-style: none;
+  margin: 0.25em 0;
+  padding: 0;
+  padding-left: 6px;
+}
+.ironsworn.sheet.actor .hover-card ul li {
+  background: url("assets/ui/chevron-right.png") no-repeat left 2px;
+  padding-left: 14px;
+}
+.ironsworn.sheet.actor .hover-card hr {
+  flex: 0;
+  width: 100%;
+}
+.ironsworn.sheet.actor .bond-card {
+  width: 300px;
+  height: 150px;
+  overflow: hidden;
+}
+.ironsworn.sheet.actor .bond-card .desc {
+  overflow: auto;
+}
+.ironsworn.sheet.actor .vow-card {
+  width: 300px;
+  height: 175px;
+  overflow: hidden;
+}
+.ironsworn.sheet.actor .vow-card .rank {
+  font-family: OPTILagoon, Arial-bold, arial, sans-serif;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+.ironsworn.sheet.actor .vow-card .progress {
+  margin-top: 4px;
+}
+.ironsworn.sheet.actor .vow-card .progress .pip {
+  width: 20px;
+  height: 20px;
+}
+.ironsworn.sheet.actor .vow-card .desc {
+  overflow: auto;
+}
+.ironsworn.sheet.actor .asset-card {
+  width: 300px;
+  height: 225px;
+  padding: 0;
+}
+.ironsworn.sheet.actor .asset-card .card-header {
+  display: flex;
+  width: 100%;
+  margin: 0;
+  padding: 2px;
+  background: #505050;
+  color: white;
+  font-family: OPTILagoon, Arial-bold, arial, sans-serif;
+  font-size: 12px;
+  word-spacing: 3px;
+  text-transform: uppercase;
+}
+.ironsworn.sheet.actor .asset-card .card-header .type {
+  flex: 1;
+}
+.ironsworn.sheet.actor .asset-card .card-header .acquired,
+.ironsworn.sheet.actor .asset-card .card-header .not-acquired {
+  flex: 0;
+  align-self: center;
+  min-width: 10px;
+  min-height: 10px;
+  max-width: 10px;
+  max-height: 10px;
+  border: 1px solid black;
+  border-radius: 7px;
+  margin-right: 2px;
+}
+.ironsworn.sheet.actor .asset-card .card-header .acquired {
+  background: black;
+}
+.ironsworn.sheet.actor .asset-card .card-body {
+  display: flex;
+  flex-direction: column;
+  padding: 6px;
+  overflow: hidden;
+}
+.ironsworn.sheet.actor .asset-card .card-body .limit {
+  margin-bottom: 2px;
+  font-size: 0.8rem;
+}
+.ironsworn.sheet.actor .asset-card .card-body .ability {
+  flex: 1;
+  overflow: auto;
+}
+.ironsworn.sheet.actor .asset-card .page-count {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  padding: 2px 4px;
+  font-size: 0.6rem;
+  text-align: right;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+}
+.ironsworn.sheet.actor .gear-card {
+  width: 250px;
+  height: 125px;
+}
+.ironsworn.sheet.actor .gear-card .card-header {
+  display: flex;
+}
+.ironsworn.sheet.actor .gear-card .card-header .name {
+  flex: 1;
+}
+.ironsworn.sheet.actor .gear-card .card-header .quantity {
+  flex: 0;
+}
+.ironsworn.sheet.actor .gear-card .card-body {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.ironsworn.sheet.actor .gear-card .card-body .description {
+  flex: 1;
+  overflow: auto;
+}
+.ironsworn.sheet.item.bond {
+  min-width: 300px;
+  min-height: 200px;
+}
+.ironsworn.sheet.item.vow {
+  min-width: 600px;
+  min-height: 300px;
+}
+.ironsworn.sheet.item.track {
+  min-width: 600px;
+  min-height: 300px;
+}
+.ironsworn.sheet.item.move {
+  min-width: 500px;
+  min-height: 500px;
+}
+.ironsworn.sheet.item.move .editor .CodeMirror-vscrollbar {
+  overflow-y: hidden;
+}
+.ironsworn.sheet.item.asset {
+  min-width: 500px;
+  min-height: 400px;
+}
+.ironsworn.sheet.item.asset .window-content {
+  overflow: hidden;
+  padding: 0 !important;
+}
+.ironsworn.sheet.item.asset form {
+  overflow: hidden;
+}
+.ironsworn.sheet.item.asset form .sheet-header {
+  margin-bottom: 0;
+}
+.ironsworn.sheet.item.asset form .sheet-header select {
+  border: none;
+  border-radius: 0;
+  width: 100%;
+  margin: 0;
+  padding: 2px;
+  background: #505050;
+  color: white;
+  font-family: OPTILagoon, Arial-bold, arial, sans-serif;
+  font-size: 12px;
+  word-spacing: 3px;
+  text-transform: uppercase;
+}
+.ironsworn.sheet.item.asset form .sheet-body {
+  overflow: hidden;
+}
+.ironsworn.sheet.item.asset form .sheet-body input.name {
+  margin: 2px 1px;
+  margin-right: 0;
+  padding: 4px 6px;
+  font-size: 1.2em;
+  border-radius: 0;
+}
+.ironsworn.sheet.item.asset form .sheet-body input.name:last-child {
+  flex: 0;
+}
+.ironsworn.sheet.item.asset form .sheet-body input.limit {
+  margin: 1px 1px;
+  margin-bottom: 4px;
+  margin-right: 0;
+  border-radius: 0;
+}
+.ironsworn.sheet.item.asset form .sheet-body .ability-list {
+  flex: 1;
+  overflow: auto;
+  margin: 2px 0;
+  padding: 0 12px;
+}
+.ironsworn.sheet.item.asset form .sheet-body .ability-list .ability {
+  display: flex;
+  flex-direction: row;
+}
+.ironsworn.sheet.item.asset form .sheet-body .ability-list .ability:not(:last-child) {
+  margin-bottom: 4px;
+}
+.ironsworn.sheet.item.asset form .sheet-body .ability-list .ability .ability-acquired,
+.ironsworn.sheet.item.asset form .sheet-body .ability-list .ability .ability-not-acquired {
+  position: relative;
+  top: 3px;
+  width: 10px;
+  height: 10px;
+  border: 1px solid black;
+  border-radius: 7px;
+  margin-right: 6px;
+}
+.ironsworn.sheet.item.asset form .sheet-body .ability-list .ability .ability-acquired:hover,
+.ironsworn.sheet.item.asset form .sheet-body .ability-list .ability .ability-not-acquired:hover {
+  background: black;
+  cursor: pointer;
+}
+.ironsworn.sheet.item.asset form .sheet-body .ability-list .ability .ability-acquired {
+  background: black;
+}
+.ironsworn.sheet.item.asset form .sheet-body .ability-list .ability .ability-acquired:hover {
+  background: none;
+  cursor: pointer;
+}
+.ironsworn.sheet.item.asset form .sheet-body .ability-list .ability .ability-desc {
+  flex: 1;
+  margin-right: 1em;
+}
+.ironsworn.sheet.item.asset form .sheet-body .ability-list .ability .ability-desc p {
+  margin: 0;
+}
+.ironsworn.sheet.item.asset form .sheet-body .ability-list .ability .ability-desc ul {
+  list-style: none;
+  margin: 0.25em 0;
+  padding: 0;
+  padding-left: 6px;
+}
+.ironsworn.sheet.item.asset form .sheet-body .ability-list .ability .ability-desc ul li {
+  background: url("assets/ui/chevron-right.png") no-repeat left 2px;
+  padding-left: 14px;
+}
+.ironsworn.sheet.item.asset form .sheet-body .ability-list .ability .ability-edit {
+  width: 16px;
+  height: 16px;
+  text-align: center;
+  margin-right: 2px;
+}
+.ironsworn.sheet.item.asset form .sheet-body .ability-list .ability .ability-edit:hover {
+  cursor: pointer;
+}
+.ironsworn.sheet.item.asset form .sheet-body .ability-list .ability .ability-delete {
+  width: 16px;
+  height: 16px;
+  text-align: center;
+}
+.ironsworn.sheet.item.asset form .sheet-body .ability-list .ability .ability-delete:hover {
+  cursor: pointer;
+}
+.ironsworn.sheet.item.asset form .sheet-body .action-bar {
+  flex: 0;
+  margin-bottom: 0;
+}
+.ironsworn.sheet.item.asset form .ability-desc-editor {
+  position: absolute;
+  left: 2%;
+  top: 10%;
+  width: 96%;
+  height: 88%;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  background: url("assets/ui/parchment.jpg");
+  border: 1px solid black;
+}
+.ironsworn.sheet.item.asset form .ability-desc-editor .actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 2px 6px;
+  background: #505050;
+  border-bottom: 1px solid black;
+}
+.ironsworn.sheet.item.asset form .ability-desc-editor .actions .close {
+  color: white;
+}
+.ironsworn.sheet.item.asset form .ability-desc-editor textarea {
+  flex: 1;
+  background: none;
+  border: none;
+  resize: none;
+  margin: 1px;
+  padding: 8px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.1em;
+}
+.ironsworn.sheet.item.equipment {
+  min-width: 350px;
+  min-height: 250px;
+}
+.ironsworn.sheet.item.equipment .sheet-header {
+  display: flex;
+}
+.ironsworn.sheet.item.equipment .sheet-header input.quantity {
+  flex: 0 0 2em;
+  width: 3.5em;
+  margin-left: 2px;
+  font-size: 1rem;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid #7a7971;
+  border-radius: 3px;
+  -moz-appearance: textfield;
+}
+.ironsworn.sheet.item.equipment .sheet-header input.quantity::-webkit-outer-spin-button, .ironsworn.sheet.item.equipment .sheet-header input.quantity::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.ironsworn.sheet.item form .sheet-header {
+  flex: 0;
+  margin-bottom: 4px;
+}
+.ironsworn.sheet.item form .sheet-header input {
+  font-size: 22px;
+  height: 34px;
+  padding: 0 6px;
+}
+.ironsworn.sheet.item form .sheet-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.ironsworn.sheet.item form .sheet-body > * {
+  flex: 0;
+  margin: 8px 0;
+}
+.ironsworn.sheet.item form .sheet-body > *:last-child {
+  flex: 1;
+}
+.ironsworn.sheet.item form .sheet-body textarea {
+  resize: none;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.ironsworn.sheet.item form .sheet-body .ranks {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-family: OPTILagoon, Arial-bold, arial, sans-serif;
+  text-transform: uppercase;
+  font-size: 10px;
+}
+.ironsworn.sheet.item form .sheet-body .ranks .rank-wrapper {
+  display: flex;
+  align-items: center;
+}
+.ironsworn.sheet.item form .sheet-body .input-group {
+  display: flex;
+  flex-direction: column;
+}
+.ironsworn.sheet.item form .sheet-body .input-group textarea {
+  flex: 1;
+}

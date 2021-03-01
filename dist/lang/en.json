@@ -1,0 +1,21 @@
+{
+  "ironsworn.stat.edge": "Edge",
+  "ironsworn.stat.heart": "Heart",
+  "ironsworn.stat.iron": "Iron",
+  "ironsworn.stat.shadow": "Shadow",
+  "ironsworn.stat.wits": "Wits",
+  "ironsworn.roll.stat": "##STAT## Roll",
+  "ironsworn.roll.miss": "Miss",
+  "ironsworn.roll.hit.weak": "Weak Hit",
+  "ironsworn.roll.hit.strong": "Strong Hit",
+  "ironsworn.asset.type.companion": "Companion",
+  "ironsworn.asset.type.path": "Path",
+  "ironsworn.asset.type.combatTalent": "Combat Talent",
+  "ironsworn.asset.type.ritual": "Ritual",
+  "ironsworn.tab.core": "Core",
+  "ironsworn.tab.inventory": "Inventory",
+  "ironsworn.tab.biography": "Biography",
+  "ironsworn.tooltip.core": "Core",
+  "ironsworn.tooltip.inventory": "Inventory",
+  "ironsworn.tooltip.biography": "Biography"
+}
